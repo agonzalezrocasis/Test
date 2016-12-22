@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#ec0707"
+    tools:context=".activities.MainActivity">
+
+    <ImageView
+        android:id="@+id/tempImageView"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:src="@drawable/temperature"
+        android:layout_alignTop="@+id/bulbImageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/doorImageView"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:src="@drawable/door"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/bulbImageView"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:src="@drawable/bulb_off"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/homeImageView"
+        android:layout_width="150dip"
+        android:layout_height="150dip"
+        android:paddingBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="15dp"
+        android:paddingTop="5dp"
+        android:src="@drawable/home"
+        android:layout_above="@+id/doorImageView"
+        android:layout_toEndOf="@+id/tempImageView"
+        android:layout_marginBottom="27dp" />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="@string/togglebutton"
+        android:id="@+id/mToggleButton"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/homeImageView" />
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/homeImageView"
+        android:layout_below="@+id/mToggleButton"
+        android:layout="@+id/fragmentList"
+        android:name="agonzalez.rocasis.com.test.fragments.MessageHistoryListFragment"
+        tools:layout="@layout/fragment_message_history_list"/>
+
+</RelativeLayout>
